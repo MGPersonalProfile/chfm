@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informe Ejecutivo de Resultados — CHFM | 15 abr – 30 jun 2026</title>
+<meta name="description" content="Informe ejecutivo de resultados de la Dirección Administrativa de la Central Hidroeléctrica General Francisco Morazán (CHFM), período 15 de abril al 30 de junio de 2026.">
+<style>
+:root{
+  --navy:#0b2440; --navy2:#123a63; --steel:#2e5f8a; --cyan:#12b3c7; --cyan-d:#0d8a99;
+  --ink:#12212f; --body:#3f5468; --line:#d8e3ee; --bg:#f5f8fb; --card:#ffffff;
+  --amber:#c47f16; --red:#b3402f; --green:#1c7a53;
+  --max:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,Helvetica,Arial,sans-serif;
+  color:var(--body);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+
+/* ---------- NAV ---------- */
+nav{position:sticky;top:0;z-index:50;background:rgba(11,36,64,.97);backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(255,255,255,.10)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;gap:16px}
+.brand{color:#fff;font-weight:700;font-size:.95rem;letter-spacing:.02em;white-space:nowrap}
+.brand span{color:var(--cyan)}
+.navlinks{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.navlinks::-webkit-scrollbar{display:none}
+.navlinks a{color:#c3d5e6;text-decoration:none;font-size:.83rem;padding:7px 11px;border-radius:6px;
+  white-space:nowrap;transition:.18s}
+.navlinks a:hover{background:rgba(255,255,255,.10);color:#fff}
+
+/* ---------- HERO ---------- */
+header{background:linear-gradient(160deg,#0b2440 0%,#123a63 55%,#17507f 100%);color:#fff;
+  padding:64px 0 0;position:relative;overflow:hidden}
+header::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse at 78% 8%,rgba(18,179,199,.28),transparent 58%);pointer-events:none}
+header .wrap{position:relative;z-index:1}
+.eyebrow{display:inline-block;background:rgba(18,179,199,.16);border:1px solid rgba(18,179,199,.45);
+  color:#7fe3f0;padding:5px 13px;border-radius:99px;font-size:.74rem;font-weight:600;
+  letter-spacing:.09em;text-transform:uppercase;margin-bottom:20px}
+h1{font-size:clamp(1.85rem,4.4vw,3rem);line-height:1.15;font-weight:800;color:#fff;letter-spacing:-.02em}
+.sub{font-size:clamp(1rem,2vw,1.2rem);color:#a9c7e0;margin-top:14px;max-width:750px}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 8px}
+.chip{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.17);border-radius:8px;
+  padding:9px 14px;font-size:.83rem;color:#d7e6f4}
+.chip b{color:#fff;font-weight:600}
+
+/* KPI strip */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:14px;
+  margin-top:38px;padding-bottom:56px}
+.kpi{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:12px;
+  padding:18px 16px;transition:.2s}
+.kpi:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+.kpi .n{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;color:#fff;line-height:1.1;letter-spacing:-.02em}
+.kpi .n.alert{color:#ff9d8a}
+.kpi .l{font-size:.76rem;color:#9fbdd8;margin-top:6px;line-height:1.4}
+
+/* ---------- SECTIONS ---------- */
+section{padding:62px 0;border-bottom:1px solid var(--line)}
+section:nth-of-type(even){background:#fff}
+.snum{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;
+  background:var(--cyan);color:#fff;border-radius:8px;font-weight:700;font-size:.9rem;margin-right:12px}
+h2{font-size:clamp(1.35rem,2.7vw,1.85rem);color:var(--navy);font-weight:750;letter-spacing:-.01em;
+  display:flex;align-items:center;margin-bottom:10px}
+.lead{font-size:1.02rem;max-width:820px;margin-bottom:28px;color:var(--body)}
+h3{font-size:1.02rem;color:var(--navy2);font-weight:700;margin-bottom:8px}
+
+/* alert / constraint box */
+.alertbox{background:linear-gradient(135deg,#fff6f3,#ffeee9);border:1px solid #f2c4b6;
+  border-left:5px solid var(--red);border-radius:12px;padding:22px 24px;margin:26px 0}
+.alertbox .t{color:var(--red);font-weight:750;font-size:.79rem;letter-spacing:.09em;
+  text-transform:uppercase;margin-bottom:9px}
+.alertbox p{color:#7d3628;font-size:1rem}
+.alertbox b{color:var(--red);font-weight:750}
+
+.note{background:#eef7fa;border-left:4px solid var(--cyan-d);border-radius:0 10px 10px 0;
+  padding:16px 20px;margin-top:24px;font-size:.93rem;color:#245a67}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(292px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;
+  transition:.2s;position:relative}
+section:nth-of-type(even) .card{background:var(--bg)}
+.card:hover{border-color:var(--cyan);box-shadow:0 8px 22px rgba(11,36,64,.09);transform:translateY(-2px)}
+.card .ico{font-size:1.4rem;margin-bottom:10px;display:block}
+.card p{font-size:.92rem}
+.card ul{margin:8px 0 0 18px;font-size:.9rem}
+.card li{margin-bottom:5px}
+
+/* table */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:#fff}
+table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px}
+thead{background:var(--navy2)}
+th{color:#fff;text-align:left;padding:13px 16px;font-weight:600;font-size:.85rem}
+td{padding:12px 16px;border-top:1px solid var(--line);color:var(--body)}
+tbody tr:nth-child(even){background:#f8fbfd}
+tbody tr:hover{background:#eef6fb}
+td.v{font-weight:750;color:var(--navy);white-space:nowrap}
+td.v.warn{color:var(--red)}
+
+/* asks */
+.ask{background:#fff;border:1px solid var(--line);border-left:5px solid var(--cyan);
+  border-radius:0 12px 12px 0;padding:22px 24px;margin-bottom:16px;transition:.2s}
+.ask:hover{box-shadow:0 8px 22px rgba(11,36,64,.09);border-left-color:var(--navy2)}
+.ask .tag{display:inline-block;background:var(--navy2);color:#fff;font-size:.7rem;font-weight:700;
+  letter-spacing:.07em;text-transform:uppercase;padding:3px 10px;border-radius:5px;margin-bottom:10px}
+.ask h3{font-size:1.06rem;margin-bottom:7px}
+.ask p{font-size:.94rem}
+
+/* timeline */
+.tl{position:relative;padding-left:30px;margin-top:8px}
+.tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;
+  background:linear-gradient(180deg,var(--cyan),var(--line))}
+.tl li{list-style:none;position:relative;margin-bottom:15px;font-size:.95rem}
+.tl li::before{content:"";position:absolute;left:-27px;top:7px;width:11px;height:11px;
+  border-radius:50%;background:#fff;border:3px solid var(--cyan)}
+
+/* footer */
+footer{background:var(--navy);color:#93b2cc;padding:40px 0;font-size:.87rem}
+footer b{color:#fff}
+footer .fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px;margin-bottom:24px}
+footer .line{border-top:1px solid rgba(255,255,255,.13);padding-top:18px;font-size:.79rem;color:#6f90ad}
+
+@media(max-width:640px){
+  .navlinks{gap:0}
+  .navlinks a{padding:7px 8px;font-size:.78rem}
+  header{padding-top:44px}
+  section{padding:46px 0}
+}
+@media print{
+  nav{display:none}
+  header{background:var(--navy)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  section{page-break-inside:avoid;padding:24px 0}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">CHFM · <span>Informe Ejecutivo</span></div>
+    <div class="navlinks">
+      <a href="#contexto">Contexto</a>
+      <a href="#partida">Punto de partida</a>
+      <a href="#avances">Avances</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#solicitudes">Solicitudes</a>
+      <a href="#plan">90 días</a>
+      <a href="#evidencia">Evidencia</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">Informe trimestral de gestión</span>
+    <h1>Informe Ejecutivo de Resultados</h1>
+    <p class="sub">Gestión Administrativa de la Central Hidroeléctrica General Francisco Morazán (CHFM) — período del <b>15 de abril al 30 de junio de 2026</b>.</p>
+    <div class="meta">
+      <div class="chip">Unidad: <b>Dirección Administrativa CHFM</b></div>
+      <div class="chip">Respaldo: <b>DA-CHFM-460-VII-2026</b></div>
+      <div class="chip">Plan operativo: <b>19 objetivos</b></div>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><div class="n alert" data-c="2.48" data-dec="2" data-suf="%">0%</div>
+        <div class="l">Solicitudes de pedido atendidas (3 de 121)</div></div>
+      <div class="kpi"><div class="n alert" data-c="28.04" data-dec="2" data-suf="%">0%</div>
+        <div class="l">Ejecución presupuestaria acumulada</div></div>
+      <div class="kpi"><div class="n" data-c="1754">0</div>
+        <div class="l">Bienes identificados para descargo o reversión</div></div>
+      <div class="kpi"><div class="n" data-c="1110">0</div>
+        <div class="l">Atenciones médicas brindadas</div></div>
+      <div class="kpi"><div class="n" data-c="219">0</div>
+        <div class="l">Puntos de alumbrado georreferenciados</div></div>
+      <div class="kpi"><div class="n" data-c="34" data-suf=" km">0</div>
+        <div class="l">Cobertura vial formulada</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- 1 -->
+<section id="contexto">
+  <div class="wrap">
+    <h2><span class="snum">1</span>Identificación y alineamiento estratégico</h2>
+    <p class="lead">La gestión de la Dirección Administrativa de la CHFM se alinea con la política de generación eficiente de energía y con los objetivos institucionales de la ENEE.</p>
+    <div class="tablewrap">
+      <table>
+        <tbody>
+          <tr><td class="v">Unidad responsable</td><td>Dirección Administrativa de la Central Hidroeléctrica General Francisco Morazán (CHFM).</td></tr>
+          <tr><td class="v">Plan de Gobierno</td><td>Política de generación eficiente de energía para la competitividad: fortalecimiento, mantenimiento y repotenciación de las centrales hidroeléctricas existentes, incluida la CHFM.</td></tr>
+          <tr><td class="v">PEI-ENEE</td><td>Confiabilidad del suministro, capacidad operativa, eficiencia administrativa, transparencia y rendición de cuentas.</td></tr>
+          <tr><td class="v">POA 2026</td><td>Plan de Trabajo Operativo de la Dirección Administrativa, organizado en 19 objetivos para apoyar la continuidad, seguridad y recuperación integral de la Central.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="partida">
+  <div class="wrap">
+    <h2><span class="snum">2</span>Punto de partida y capacidad de respuesta</h2>
+    <p class="lead">La gestión inició con deterioro acumulado en instalaciones, campamentos y servicios de apoyo; compras y reposiciones críticas sin resolver; baja ejecución; y ausencia de disposiciones administrativas escritas que delimitaran funciones. La Dirección Administrativa local <b>no dispone de presupuesto propio ni controla directamente los procesos centrales de compra</b>. Aun bajo esas restricciones, organizó un plan de 19 objetivos, movilizó cooperación interna e interinstitucional y produjo resultados verificables orientados a proteger la continuidad de la CHFM.</p>
+
+    <div class="alertbox">
+      <div class="t">Restricción operativa comprobable</div>
+      <p>De <b>121 solicitudes de pedido</b> remitidas, al cierre del período se habían recibido <b>3 (2.48%)</b>. La ejecución presupuestaria acumulada reportada fue <b>28.04%</b>.</p>
+    </div>
+
+    <div class="note">
+      <b>Acciones administrativas que sostuvieron los resultados:</b> remisión y corrección de expedientes; seguimiento de pedidos y licitaciones; control de permisos, planillas y contratos; revisión de comodatos; coordinación de mantenimiento, salud, seguridad, capacitación, redes, campamentos y escuela; elaboración de oficios, matrices, actas e informes.
+    </div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section id="avances">
+  <div class="wrap">
+    <h2><span class="snum">3</span>Avances estratégicos del período</h2>
+    <p class="lead">Siete frentes de trabajo ejecutados con recursos limitados y cooperación interinstitucional.</p>
+    <div class="grid">
+      <div class="card"><span class="ico">📋</span><h3>Gobernanza, planificación y control</h3>
+        <p>Plan Operativo 2026; diagnóstico situacional; dos informes críticos de gestión y ejecución; PACC 2027; esquema trimestral de seguimiento y rendición de cuentas.</p></div>
+
+      <div class="card"><span class="ico">⚙️</span><h3>Continuidad operativa y compras</h3>
+        <p>Prórroga por un año del transporte de personal; medicamentos recibidos y dispensario abastecido aproximadamente al 75%; especificaciones y seguimiento de repuestos de turbinas, generadores, transformadores, químicos y equipo crítico.</p></div>
+
+      <div class="card"><span class="ico">🗂️</span><h3>Depuración patrimonial</h3>
+        <p><b>1,754 gestiones</b> identificadas para descargo o reversión y <b>13 actas</b> preparadas, mediante equipo conjunto ENEE-CHFM y apoyo logístico del 14 Batallón de Infantería.</p></div>
+
+      <div class="card"><span class="ico">🔧</span><h3>Recuperación física y servicios</h3>
+        <p>43 mantenimientos de flota; cinco viviendas con reparaciones menores; 30 inspecciones al sistema de agua; contrato anual de recolección de residuos; 219 puntos de alumbrado georreferenciados.</p></div>
+
+      <div class="card"><span class="ico">🏥</span><h3>Salud, educación y bienestar</h3>
+        <p>1,110 consultas médicas y dos jornadas de salud; mesa técnica para fortalecer el CEBBEC; transporte escolar y mejoras básicas; gestión de regularización laboral y previsional.</p></div>
+
+      <div class="card"><span class="ico">🛡️</span><h3>Seguridad y control territorial</h3>
+        <p>Tres postas militares reparadas, una barraca mejorada, dos vehículos militares atendidos y propuesta de cooperación para un apostadero naval que proteja el embalse.</p></div>
+
+      <div class="card"><span class="ico">🚧</span><h3>Proyectos de recuperación y desarrollo</h3>
+        <p>Iniciativa vial Santa Cruz de Yojoa–CHFM, con moción ya presentada en sesión ordinaria del Congreso Nacional, que incluye la red interna desde Santa Cruz hasta campamentos y accesos a la cortina de la central (<b>34 km</b>); reactivación del Módulo Comunitario; propuesta <b>SIGA</b>, sistema único enmarcado en la iniciativa de gobierno digital y fortalecido con inteligencia artificial para el manejo integral de los procesos de la CHFM; fortalecimiento de capacitación, telecomunicaciones y proyectos productivos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="resultados">
+  <div class="wrap">
+    <h2><span class="snum">4</span>Resultados verificables</h2>
+    <p class="lead">Indicadores del período con su medio de verificación y alcance.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Indicador</th><th>Resultado</th><th>Verificación / alcance</th></tr></thead>
+        <tbody>
+          <tr><td>Solicitudes de pedido atendidas</td><td class="v warn">3 de 121</td><td>2.48% al cierre del período</td></tr>
+          <tr><td>Ejecución presupuestaria acumulada</td><td class="v warn">28.04%</td><td>L 82.84 millones reportados</td></tr>
+          <tr><td>Bienes identificados para descargo/reversión</td><td class="v">1,754</td><td>13 actas preparadas</td></tr>
+          <tr><td>Mantenimiento de flota vehicular</td><td class="v">43</td><td>26 correctivos, 16 preventivos y 1 mayor</td></tr>
+          <tr><td>Atenciones médicas brindadas</td><td class="v">1,110</td><td>Personal, familiares y jubilados</td></tr>
+          <tr><td>Jornadas integrales de salud</td><td class="v">2</td><td>CEBBEC y personal CHFM</td></tr>
+          <tr><td>Inspecciones al sistema de agua</td><td class="v">30</td><td>La Laguna y Los Pinos</td></tr>
+          <tr><td>Viviendas con reparaciones menores</td><td class="v">5</td><td>Plan de mantenimiento</td></tr>
+          <tr><td>Puntos de alumbrado georreferenciados</td><td class="v">219</td><td>Base para rehabilitación</td></tr>
+          <tr><td>Cobertura vial formulada</td><td class="v">34 km</td><td>278,450 m² aproximados</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section id="solicitudes">
+  <div class="wrap">
+    <h2><span class="snum">5</span>Acciones estratégicas solicitadas a la Presidencia</h2>
+    <p class="lead">Cuatro decisiones de conducción que permitirían convertir los avances del período en recuperación sostenida de la Central.</p>
+
+    <div class="ask">
+      <span class="tag">Solicitud 1</span>
+      <h3>Plan Presidencial de Recuperación Integral de la CHFM</h3>
+      <p>Instruir a la ENEE la aplicación y ejecución del plan propuesto por la Dirección Administrativa de la CHFM, con componentes técnico, físico, administrativo, social y de seguridad; presupuesto, responsables, hitos y reporte mensual a Casa de Gobierno/DIGER.</p>
+    </div>
+
+    <div class="ask">
+      <span class="tag">Solicitud 2</span>
+      <h3>Desbloqueo de compras y mantenimiento crítico</h3>
+      <p>Priorizar repuestos de generación, sistemas de enfriamiento, transformadores, taller automotriz, telecomunicaciones, químicos, servicios generales y recuperación de campamentos, con mesa ejecutiva mensual y trazabilidad de cada expediente.</p>
+    </div>
+
+    <div class="ask">
+      <span class="tag">Solicitud 3</span>
+      <h3>Capacidad administrativa con responsabilidad definida</h3>
+      <p>Formalizar por escrito las atribuciones de la Dirección Administrativa de la CHFM, la ruta de coordinación con la Jefatura Técnica y las gerencias centrales, y los recursos que puede administrar para responder por resultados.</p>
+    </div>
+
+    <div class="ask">
+      <span class="tag">Solicitud 4</span>
+      <h3>Intervención social y territorial</h3>
+      <p>Restablecer Servicios Generales; atender viviendas inhabitables y áreas comunes; regularizar condiciones laborales históricas; fortalecer CEBBEC, dispensario, seguridad terrestre y protección del embalse.</p>
+    </div>
+
+    <div class="note">
+      <b>Alcance institucional:</b> se solicita conducción, priorización y seguimiento presidencial, sin sustituir las competencias legales de la ENEE ni exceptuar los controles de contratación y presupuesto.
+    </div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section id="plan">
+  <div class="wrap">
+    <h2><span class="snum">6</span>Próximos 90 días</h2>
+    <p class="lead">Compromisos de ejecución para el siguiente trimestre.</p>
+    <ul class="tl">
+      <li>Completar la depuración y clasificación de bienes.</li>
+      <li>Remitir paquetes críticos sin devolución.</li>
+      <li>Iniciar la recuperación priorizada de campamentos.</li>
+      <li>Activar el plan de capacitación.</li>
+      <li>Avanzar en seguridad, agua, telecomunicaciones y CEBBEC.</li>
+      <li>Consolidar un tablero mensual de ejecución física, financiera y de impacto.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="evidencia">
+  <div class="wrap">
+    <h2><span class="snum">7</span>Evidencia y corroboración</h2>
+    <div class="grid">
+      <div class="card"><span class="ico">📁</span><h3>Respaldo institucional</h3>
+        <p>Informe Trimestral <b>DA-CHFM-460-VII-2026</b>; Plan Operativo 2026; actas de bienes; registros de mantenimiento, agua y salud; contratos; oficios; expediente vial; levantamientos georreferenciados y evidencia fotográfica.</p></div>
+      <div class="card"><span class="ico">⚠️</span><h3>Referencia pública complementaria</h3>
+        <p>Riesgos críticos en sistemas de enfriamiento y <b>70% de las edificaciones</b> de los campamentos con daños, con <b>12 viviendas inhabitables</b> y una necesidad estimada superior a <b>L 60 millones</b>; hallazgos consistentes con el diagnóstico institucional.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><b>Informe Ejecutivo de Resultados</b><br>Gestión Administrativa CHFM<br>15 de abril al 30 de junio de 2026</div>
+      <div><b>Unidad responsable</b><br>Dirección Administrativa<br>Central Hidroeléctrica General Francisco Morazán</div>
+      <div><b>Documento de respaldo</b><br>Informe Trimestral DA-CHFM-460-VII-2026</div>
+    </div>
+    <div class="line">Empresa Nacional de Energía Eléctrica (ENEE) — Central Hidroeléctrica General Francisco Morazán. Documento de rendición de cuentas del período.</div>
+  </div>
+</footer>
+
+<script>
+// Contadores animados al entrar en pantalla
+(function(){
+  var els = document.querySelectorAll('[data-c]');
+  var fmt = function(v, dec){
+    return v.toLocaleString('es-HN', {minimumFractionDigits:dec, maximumFractionDigits:dec});
+  };
+  var run = function(el){
+    var target = parseFloat(el.dataset.c),
+        dec = parseInt(el.dataset.dec || '0', 10),
+        suf = el.dataset.suf || '',
+        dur = 1200, t0 = null;
+    function step(ts){
+      if(!t0) t0 = ts;
+      var p = Math.min((ts - t0)/dur, 1);
+      p = 1 - Math.pow(1 - p, 3); // ease-out
+      el.textContent = fmt(target * p, dec) + suf;
+      if(p < 1) requestAnimationFrame(step);
+      else el.textContent = fmt(target, dec) + suf;
+    }
+    requestAnimationFrame(step);
+  };
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(e){ run(e); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ run(en.target); io.unobserve(en.target); }
+    });
+  }, {threshold:.4});
+  els.forEach(function(e){ io.observe(e); });
+})();
+
+// Resaltar sección activa en el nav
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.navlinks a')),
+      secs = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY + 90, idx = -1;
+    secs.forEach(function(s, i){ if(s && s.offsetTop <= y) idx = i; });
+    links.forEach(function(a, i){
+      a.style.background = (i === idx) ? 'rgba(18,179,199,.22)' : '';
+      a.style.color = (i === idx) ? '#fff' : '';
+    });
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
